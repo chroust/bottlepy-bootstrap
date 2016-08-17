@@ -1,4 +1,5 @@
-import sys, os
+import os
+import sys
 from datetime import datetime
 from socket import socket, SOCK_DGRAM, AF_INET
 
@@ -25,15 +26,12 @@ os.chdir(currentPath)
 #
 import config, bottle
 import bottle_preRequest
-from beaker.middleware import SessionMiddleware
 
-from bottle import route, run, view
-from bottle import TEMPLATE_PATH, request, static_file
+from bottle import route, run
+from bottle import static_file
 from bottle import install
 
-# Import all of your controllers here...
-from app.controllers import home
-
+import controllers.home
 
 #
 # Add view paths to the Bottle template path
